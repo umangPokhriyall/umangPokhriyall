@@ -1,11 +1,13 @@
 ### Umang Pokhriyal
 
-Self-taught systems engineer. Rust, low-latency, OS internals, applied cryptography.
+Low-latency systems engineer. Rust, lock-free data structures, io_uring server internals, threshold
+cryptography.
 
-I build falsifiable proof-of-work. Every performance claim below traces to a committed benchmark, and
-I publish the results that underperformed as plainly as the ones that worked. The five repos aren't
-unrelated projects. They're the disassembled parts of one system I'm building toward: a microVM-based
-agent sandbox. Each part is built and measured on its own first.
+I build falsifiable proof-of-work. Every performance claim below traces to a committed benchmark, and I
+publish the results that underperformed as plainly as the ones that worked — an honest negative with a
+profile behind it is the point. The five repos aren't unrelated projects. They're the disassembled parts
+of one system I'm building toward: a microVM-based agent sandbox, each part built and measured on its own
+first. I'm self-taught; the work is the credential, and all of it is here to clone and re-run.
 
 **Site and writeups:** https://umangpokhriyall.github.io
 
