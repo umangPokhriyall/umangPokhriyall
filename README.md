@@ -1,23 +1,20 @@
 ### Umang Pokhriyal
 
-Low-latency systems engineer. Rust, lock-free data structures, io_uring server internals, threshold
-cryptography.
+Systems engineer focused on Rust, distributed systems, low-latency infrastructure, and applied cryptography.
 
-I build falsifiable proof-of-work. Every performance claim below traces to a committed benchmark, and I
-publish the results that underperformed as plainly as the ones that worked — an honest negative with a
-profile behind it is the point. The five repos aren't unrelated projects. They're the disassembled parts
-of one system I'm building toward: a microVM-based agent sandbox, each part built and measured on its own
-first. I'm self-taught; the work is the credential, and all of it is here to clone and re-run.
+I build projects to answer concrete engineering questions, measure the results, and publish both the successes and the failures. Every performance or security claim links to the benchmark, experiment, or test that produced it.
 
-**Site and writeups:** https://umangpokhriyall.github.io
+I'm self-taught, and this profile is my public engineering notebook. Everything here is intended to be cloned, reproduced, and inspected.
+
+Website & long-form writeups: https://umangpokhriyall.github.io
 
 | Repo | The one result | Source |
 |---|---|---|
-| **[frost-ed25519-kit](https://github.com/umangPokhriyall/frost-ed25519-kit)** | Shipped a threshold signer, audited it, then forged it on purpose: a valid signature on a message no honest session signed, ~50 ms. Rebuilt to RFC 9591 FROST, checked byte-for-byte. | `legacy/results/ros_forgery.txt` |
-| **[low-latency-lob](https://github.com/umangPokhriyall/low-latency-lob)** | The "optimal" flat-array order book went from best on synthetic load to **288× slower than a BTreeMap on real BTCUSDT**. The CPU counters say why: one book is memory-bound, the other branch-mispredict-bound. | `bench/results/throughput.csv` |
-| **[Rust-Tcp-Server](https://github.com/umangPokhriyall/Rust-Tcp-Server)** | 11 server models behind one sans-IO core, benchmarked to a true C10K. io_uring cuts syscalls/req in half (2.02 vs 4.03) and **still sheds load on a single ring**. 2× fewer syscalls isn't 2× throughput. | `bench/results/c10k_summary.csv` |
-| **[Coingate](https://github.com/umangPokhriyall/Coingate)** | Exactly-once over an at-least-once stream. A chaos harness fires a crash at **every statement boundary × every redelivery schedule**: 0 conservation violations, 1 send per withdrawal, at READ COMMITTED. | `chaos/results/summary.md` |
-| **[proctor](https://github.com/umangPokhriyall/proctor)** | A scheduler whose decision takes 400 ns but whose dispatch takes 890 µs, because it pays 2N+4 Redis round-trips. Measured on silicon, then explained. Plus verification math and a threat model that states what crypto can't do. | `bench/results/metal-m4-large/sched/` |
+| **[frost-ed25519-kit](https://github.com/umangPokhriyall/frost-ed25519-kit)** | Built an RFC 9591 FROST threshold signer after demonstrating a practical ROS forgery against the original implementation. Includes differential testing, fuzzing, and documented threat model. | `legacy/results/ros_forgery.txt` |
+| **[low-latency-lob](https://github.com/umangPokhriyall/low-latency-lob)** | Explores data-structure tradeoffs in matching engines. A flat-array order book that excelled on synthetic workloads became 288× slower than a BTreeMap under real BTCUSDT traffic, with hardware counters explaining why. | `bench/results/throughput.csv` |
+| **[Rust-Tcp-Server](https://github.com/umangPokhriyall/Rust-Tcp-Server)** | Compares 11 server architectures built on a shared sans-IO core. Shows that reducing syscall count alone does not guarantee higher throughput under C10K workloads. | `bench/results/c10k_summary.csv` |
+| **[Coingate](https://github.com/umangPokhriyall/Coingate)** | Implements exactly-once withdrawal processing over an at-least-once event stream and validates it with exhaustive crash-injection testing. | `chaos/results/summary.md` |
+| **[proctor](https://github.com/umangPokhriyall/proctor)** | Studies scheduler latency, verification cost, and distributed coordination, including a measured analysis of Redis round-trip overhead and accompanying security model. | `bench/results/metal-m4-large/sched/` |
 
 Measured on rented AMD EPYC bare metal where the claim depends on hardware; the crypto and
 exactly-once results are hardware-independent and reproduce anywhere. Each repo says which is which.
