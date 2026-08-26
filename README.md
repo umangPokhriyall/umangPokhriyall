@@ -6,7 +6,7 @@ I build projects to answer concrete engineering questions, measure the results, 
 
 I'm self-taught, and this profile is my public engineering notebook. Everything here is intended to be cloned, reproduced, and inspected.
 
-Website & long-form writeups: https://umangpokhriyall.github.io
+Website & long-form writeups: https://dev.to/umang_up
 
 | Repo | The one result | Source |
 |---|---|---|
