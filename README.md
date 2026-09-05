@@ -12,7 +12,7 @@ Cloud Hypervisor (Linux Foundation, Rust VMM) - virtio-net multiqueue, tap/tun, 
 
 - [#8735](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8735) merged - document userfaultfd permissions for on-demand restore
 - [#8755](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8755) merged - reject MQ pair counts above `max_virtqueue_pairs`
-- [#8772](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8772) open, maintainer-approved - honour the negotiated queue pair count
+- [#8772](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8772) open,  - honour the negotiated queue pair count
 
 ### Projects
 
