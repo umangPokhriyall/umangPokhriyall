@@ -1,12 +1,22 @@
 ### Umang Pokhriyal
 
-Systems engineer focused on Rust, distributed systems, low-latency infrastructure, and applied cryptography.
+Linux virtualization. Working on
+[Cloud Hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor), in Rust.
+B.Tech CSE 2026.
 
-I build projects to answer concrete engineering questions, measure the results, and publish both the successes and the failures. Every performance or security claim links to the benchmark, experiment, or test that produced it.
+Long-form writeups: https://dev.to/umang_up
 
-I'm self-taught, and this profile is my public engineering notebook. Everything here is intended to be cloned, reproduced, and inspected.
+### Upstream
 
-Website & long-form writeups: https://dev.to/umang_up
+Cloud Hypervisor (Linux Foundation, Rust VMM) - virtio-net multiqueue, tap/tun, seccomp.
+
+- [#8735](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8735) merged - document userfaultfd permissions for on-demand restore
+- [#8755](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8755) merged - reject MQ pair counts above `max_virtqueue_pairs`
+- [#8772](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8772) open, maintainer-approved - honour the negotiated queue pair count
+
+### Projects
+
+Every performance or security claim links to the benchmark, experiment, or test that produced it.
 
 | Repo | The one result | Source |
 |---|---|---|
@@ -19,4 +29,4 @@ Website & long-form writeups: https://dev.to/umang_up
 Measured on rented AMD EPYC bare metal where the claim depends on hardware; the crypto and
 exactly-once results are hardware-independent and reproduce anywhere. Each repo says which is which.
 
-Open to systems and infrastructure roles.
+Open to remote systems and infrastructure roles.
